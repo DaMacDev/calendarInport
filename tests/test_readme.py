@@ -6,7 +6,7 @@ Contract:
   - Single canonical README at repo root.
   - Two audiences in one file: friends (top), maintainers (bottom).
   - English-only (i18n waived for this project).
-  - Self-contained: no external images / badges.
+  - Self-contained: no external images / badges outside the generated author card.
   - No emojis anywhere (same codepoint scan as slice 2.5).
 """
 
