@@ -253,7 +253,9 @@ def test_no_broken_internal_anchor_links() -> None:
 
 
 def test_no_external_image_or_badge_urls() -> None:
-    body = _read()
+    # The author card is generated portfolio-wide (claude-infra Sync-AuthorCard.ps1) and carries
+    # its own badges; the rule is about images written in this README.
+    body = re.sub(r"<!-- AUTHORCARD:START -->.*?<!-- AUTHORCARD:END -->", "", _read(), flags=re.S)
     # ![alt](http...) — markdown image with http(s) URL
     bad = re.findall(r"!\[[^\]]*\]\(https?://[^)]+\)", body)
     assert not bad, f"external image/badge URLs not allowed: {bad}"
