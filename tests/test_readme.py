@@ -31,7 +31,7 @@ REQUIRED_H2_ORDER = [
     "## License",
 ]
 
-PICKER_URL = "https://vodkadav.github.io/calendarInport/"
+PICKER_URL = "https://damacdev.github.io/calendarInport/"
 
 
 def _read() -> str:

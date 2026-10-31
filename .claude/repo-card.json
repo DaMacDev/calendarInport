@@ -10,6 +10,6 @@
     "python scripts/generate.py",
     "# Offline build from fixtures: python scripts/refresh.py --dry-run",
     "# Preview the picker: python -m http.server 8765  (open /web/calendar.html)",
-    "# End users just subscribe (no install): https://vodkadav.github.io/calendarInport/"
+    "# End users just subscribe (no install): https://damacdev.github.io/calendarInport/"
   ]
 }

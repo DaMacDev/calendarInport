@@ -415,7 +415,7 @@ def fetch_openfootball() -> dict[str, Any]:
 def fetch_tv2() -> str:
     import requests
     resp = requests.get(TV2_URL, timeout=30, headers={
-        "User-Agent": "calendarInport/0.1 (+https://github.com/Vodkadav/calendarInport)",
+        "User-Agent": "calendarInport/0.1 (+https://github.com/DaMacDev/calendarInport)",
     })
     resp.raise_for_status()
     # TV2 omits charset in Content-Type; bytes are UTF-8 but requests defaults

@@ -9,7 +9,7 @@ A simple way to get every FIFA 2026 World Cup match into your phone calendar in 
 **Daniel Machado** &middot; Software Engineering Student &middot; [GitHub](https://github.com/DaMacDev) &middot; [LinkedIn](https://www.linkedin.com/in/daniel-machado-944b7a2b4/)
 <!-- AUTHORCARD:END -->
 
-**Open the picker:** <https://vodkadav.github.io/calendarInport/>
+**Open the picker:** <https://damacdev.github.io/calendarInport/>
 
 ---
 
@@ -23,7 +23,7 @@ Subscribing means your calendar app polls our public file on its own schedule. W
 
 **Step-by-step — adding matches for your selected teams:**
 
-1. Open <https://vodkadav.github.io/calendarInport/>.
+1. Open <https://damacdev.github.io/calendarInport/>.
 2. Tick the teams you care about (or use **Subscribe to all 104 matches** for the whole tournament as a single calendar).
 3. Click **Subscribe (webcal://) for selected teams**. You get **one link per selected team** — pick three teams, get three links. Each link becomes its own subscribed calendar in your calendar app's sidebar; you can show/hide them individually with the visibility checkbox, or toggle them all together.
 4. Subscribe to each link in your calendar app (per-platform steps below).
@@ -49,12 +49,12 @@ If you want a **single calendar entry** in your sidebar rather than one per team
 
 A curated, pre-built combined calendar. One subscribe link, one calendar in your sidebar — covering 11 teams: **Mexico, England, Canada, USA, Spain, Germany, France, Brazil, Belgium, Argentina, Portugal**. Auto-updates as the knockout bracket fills in, the same way per-team subscriptions do.
 
-1. Open <https://vodkadav.github.io/calendarInport/>.
+1. Open <https://damacdev.github.io/calendarInport/>.
 2. Scroll to the **Favourites preset (11 teams)** card.
 3. Click **Subscribe to Favourites** (or, if you prefer a one-shot file, **Download Favourites .ics**).
 4. The single calendar appears in your sidebar named "FIFA World Cup 2026 — Favourites".
 
-Direct URL if you want to add it by hand: `https://vodkadav.github.io/calendarInport/ics/favourites.ics` (swap `https://` → `webcal://` for the iOS-style scheme).
+Direct URL if you want to add it by hand: `https://damacdev.github.io/calendarInport/ics/favourites.ics` (swap `https://` → `webcal://` for the iOS-style scheme).
 
 Knockout matches involving the favourites appear automatically once their teams are resolved (about 24 h after each round ends).
 
@@ -62,7 +62,7 @@ Knockout matches involving the favourites appear automatically once their teams 
 
 Download mode gives you a one-shot `.ics` file. Good if you want a snapshot now and do not care about automatic updates.
 
-1. Open <https://vodkadav.github.io/calendarInport/>.
+1. Open <https://damacdev.github.io/calendarInport/>.
 2. Tick the teams you want, or "Whole tournament".
 3. Click **Download .ics for selected teams**. Your browser saves a single `.ics` file.
 4. Double-click the file. Your default calendar app imports the events.
@@ -122,7 +122,7 @@ End users install nothing — subscribing happens entirely inside your calendar 
 Prerequisite: Python **3.11+**.
 
 ```bash
-git clone https://github.com/Vodkadav/calendarInport.git
+git clone https://github.com/DaMacDev/calendarInport.git
 cd calendarInport
 pip install -r requirements.txt
 ```
@@ -143,9 +143,9 @@ python -m http.server 8765            # preview: open /web/calendar.html on this
 End users subscribe instead — no install, no account, auto-updating:
 
 ```text
-webcal://vodkadav.github.io/calendarInport/ics/all.ics          # every match
-webcal://vodkadav.github.io/calendarInport/ics/favourites.ics   # 11-team preset
-# or pick teams in the browser: https://vodkadav.github.io/calendarInport/
+webcal://damacdev.github.io/calendarInport/ics/all.ics          # every match
+webcal://damacdev.github.io/calendarInport/ics/favourites.ics   # 11-team preset
+# or pick teams in the browser: https://damacdev.github.io/calendarInport/
 ```
 
 ## For maintainers
@@ -171,7 +171,7 @@ webcal://vodkadav.github.io/calendarInport/ics/favourites.ics   # 11-team preset
                                                 │
                                                 ▼
                                   GitHub Pages serves them at
-                                  https://vodkadav.github.io/calendarInport/
+                                  https://damacdev.github.io/calendarInport/
 
    ┌──────────────────────────────────────────────────────────────────┐
    │  Friend opens calendar.html (single file, sent / hosted)         │
@@ -200,7 +200,7 @@ Opening `web/calendar.html` directly via `file://` does not work in Chrome — t
 - The GitHub Actions cron fires at **05:00 UTC daily** (`.github/workflows/refresh.yml`).
 - The workflow runs `pytest` first as a hard gate — if any test fails, nothing is deployed.
 - On green: it runs `scripts/refresh.py`, then `scripts/generate.py`, then force-pushes the contents of `_site/` (the picker HTML plus the regenerated JSON and `.ics` files) to the `gh-pages` branch.
-- GitHub Pages serves the `gh-pages` branch root at <https://vodkadav.github.io/calendarInport/>.
+- GitHub Pages serves the `gh-pages` branch root at <https://damacdev.github.io/calendarInport/>.
 - Subscribed calendars on friends' devices poll that URL every few hours. They pick up the new data without anyone doing anything.
 
 ### Fixing a Danish team-name mismatch
