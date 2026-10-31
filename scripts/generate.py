@@ -70,6 +70,7 @@ VTIMEZONE_BLOCK = (
     "END:VTIMEZONE\r\n"
 )
 
+# The old account name stays: PRODID is an opaque product id (RFC 5545), not a link.
 PRODID = "-//Vodkadav//calendarInport//EN"
 UID_DOMAIN = "worldcup2026.local"
 EPOCH_DATE = datetime(1970, 1, 1, tzinfo=timezone.utc).date()
